@@ -1,0 +1,9 @@
+.todo-counter {
+  font-size: 18px;
+  font-weight: bolder;
+  margin-top: 16px;
+}
+
+.todo-counter span {
+  color: #3E07B2;
+}

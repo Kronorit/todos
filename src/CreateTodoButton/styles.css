@@ -1,0 +1,18 @@
+.todo_create {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: none;
+  background-color: #7006F6;
+  box-shadow: 0 0 10px 1px #350E66;
+  color: #FFF;
+  font-size: 32px;
+  transition: .2s ease transform;
+}
+
+.todo_create:hover {
+  transform: scale(1.2);
+}
