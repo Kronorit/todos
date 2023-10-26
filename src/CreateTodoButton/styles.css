@@ -6,13 +6,15 @@
   height: 40px;
   border-radius: 100%;
   border: none;
-  background-color: #7006F6;
-  box-shadow: 0 0 10px 1px #350E66;
+  background-color: var(--purple);
+  box-shadow: 0 0 10px 1px var(--dark-purple);
   color: #FFF;
   font-size: 32px;
-  transition: .2s ease transform;
+  cursor: pointer;
+  transition: .2s ease all;
 }
 
 .todo_create:hover {
   transform: scale(1.2);
+  background-color: var(--dark-purple);
 }

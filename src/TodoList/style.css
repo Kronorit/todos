@@ -13,8 +13,8 @@
   margin-right: 24px;
   margin-top: 18px;
   border-radius: 10px;
-  background-color: #7006F6;
-  box-shadow: 0 0 10px 1px #350E66;
+  background-color: var(--purple);
+  box-shadow: 0 0 10px 1px var(--dark-purple);
   color: #FFF;
   font-size: 14px;
 }
@@ -25,7 +25,14 @@
   width: 15px;
   height: 15px;
   border-radius: 15px;
-  background-color: #FFF;
+  background-color: var(--snow-white);
+  box-shadow: 0 0 10px 1px var(--dark-purple);
+  cursor: pointer;
+  transition: transform .2s ease;
+}
+
+.todo_complete-button:hover {
+  transform: scale(1.1);
 }
 
 .todo_text {
@@ -36,4 +43,19 @@
 .todo_delete-button {
   position: absolute;
   right: 15px;
+  cursor: pointer;
+  transition: transform, color .2s ease;
+}
+
+.todo_delete-button:hover {
+  color: red;
+  transform: scale(1.1);
+}
+
+.completed .todo_text{
+  text-decoration: line-through;
+}
+
+.completed .todo_complete-button {
+  background-color: var(--dark-purple);
 }

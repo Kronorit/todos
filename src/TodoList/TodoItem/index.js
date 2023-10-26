@@ -1,11 +1,15 @@
+import React from 'react';
 import '../style.css';
+import { TodoContext } from '../../TodoContext';
 
-function TodoItem({ text }) {
+function TodoItem({ text, completed }) {
+  const {completeTodo, deleteTodo} = React.useContext(TodoContext);
+
   return (
-    <li className="todo">
-      <span className='todo_complete-button'></span>
+    <li className={completed ? 'todo completed' : 'todo uncompleted'}>
+      <span className='todo_complete-button' onClick={()=>completeTodo(text)}></span>
       <span className='todo_text'>{text}</span>
-      <span className='todo_delete-button'>X</span>
+      <span className='todo_delete-button' onClick={()=>deleteTodo(text)}>X</span>
     </li>
   );
 }

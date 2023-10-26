@@ -2,8 +2,9 @@
   font-size: 18px;
   font-weight: bolder;
   margin-top: 16px;
+  color: var(--black);
 }
 
 .todo-counter span {
-  color: #3E07B2;
+  color: var(--purple);
 }

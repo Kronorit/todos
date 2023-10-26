@@ -13,11 +13,9 @@ function useLocalStorage(API, initialValue) {
     setItem(initialValue)
   }
 
-  function saveItem(newItem) {
-    let newItems = [...item];
-    newItems.push(newItem);
-    localStorage.setItem(API, JSON.stringify(newItems));
+  function saveItem(newItems) {
     setItem(newItems);
+    localStorage.setItem(API, JSON.stringify(newItems));
   }
 
   return [parsedItem, saveItem];

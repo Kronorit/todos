@@ -4,11 +4,15 @@ import { TodoContext } from "../TodoContext";
 import './style.css';
 
 function TodoList() {
-  const {todos} = React.useContext(TodoContext);
+  const {todos, searchValue} = React.useContext(TodoContext);
+  const searchedTodos = todos.filter(todo => todo["text"].toLowerCase().includes(searchValue))
 
   return (
     <ul className="todo-list">
-      {todos.map(todo=>(<TodoItem key={todo.text} text={todo.text}/>))}
+      {searchedTodos.map(todo=>(<TodoItem 
+                                  key={todo.text} 
+                                  text={todo.text}
+                                  completed={todo.completed}/>))}
     </ul>
   );
 }
