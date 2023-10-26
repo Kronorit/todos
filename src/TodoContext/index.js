@@ -7,6 +7,7 @@ const TodoContext = React.createContext();
 function TodoProvider({ children }) {
   const [todos, setTodos] = useLocalStorage(API, []);
   const [searchValue, setSearchValue] = React.useState('');
+  const [openModal, setOpenModal] = React.useState(false);
 
   const completedTodos = todos.filter(todo => todo.completed);
   const uncompletedTodos = todos.filter(todo => !todo.completed)
@@ -26,6 +27,12 @@ function TodoProvider({ children }) {
     setTodos(newTodos);
   }
 
+  function addTodo(text) {
+    let newTodos = [...todos];
+    newTodos.push({text, completed:false});
+    setTodos(newTodos);
+  }
+
   return(
     <TodoContext.Provider value={{
       completedTodos,
@@ -34,8 +41,11 @@ function TodoProvider({ children }) {
       todos,
       completeTodo,
       deleteTodo,
+      addTodo,
       searchValue,
-      setSearchValue
+      setSearchValue,
+      openModal,
+      setOpenModal
     }}
     >
       {children}

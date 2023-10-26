@@ -1,18 +1,11 @@
-import React, { useContext } from 'react';
 import './App.css';
-import { TodoCounter } from './TodoCounter';
-import { SearchTodos } from './SearchTodos';
-import { TodoList } from './TodoList';
-import { CreateTodoButton } from './CreateTodoButton';
-import { TodoContext, TodoProvider } from './TodoContext';
+import { TodoProvider } from './TodoContext';
+import { AppUI } from './AppUI';
 
 function App(){
   return (
     <TodoProvider>
-        <TodoCounter/>
-        <SearchTodos/>
-        <TodoList/>
-        <CreateTodoButton/>
+      <AppUI/>
     </TodoProvider>
   );
 }
